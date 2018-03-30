@@ -179,7 +179,7 @@ fitsout[1].write_key('EXTNAME','SUBINT  ',comment="name of this binary table ext
 fitsout[1].write_key('EXTVER',1,comment="")
 
 
-'''
+
 for rowindex in range(1,nline):
     dataout['TSUBINT'][0]=fits[1].read(rows=[rowindex], columns=['TSUBINT'])[0][0]
     dataout['OFFS_SUB'][0]=fits[1].read(rows=[rowindex], columns=['OFFS_SUB'])[0][0]
@@ -203,7 +203,7 @@ for rowindex in range(1,nline):
         dataout['DATA'][0][subindex,0,:,0]=(data[0][0][subindex,0,:,0]+data[0][0][subindex,1,:,0])/2
         #dataout['DATA'][0][subindex,0,:,0]=(fits[1].read(rows=[index], columns=['DATA'])[0][0][subindex,0,:,0]/2+fits[1].read(rows=[rowindex], columns=['DATA'])[0][0][subindex,0,:,0]/2)
     fitsout[-1].append(dataout)
-'''
+
 
 
 #fitsout.write(dataout)
